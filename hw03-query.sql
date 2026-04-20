@@ -30,7 +30,7 @@ FROM order_details
     INNER JOIN products ON order_details.product_id = products.id
     INNER JOIN categories ON products.category_id = categories.id
 INNER JOIN suppliers ON products.supplier_id = suppliers.id
-WHERE employees.employee_id > 3 AND employees.employee_id < 10;
+WHERE employees.employee_id > 3 AND employees.employee_id <= 10;
 
 
 
@@ -43,7 +43,7 @@ FROM order_details
     INNER JOIN products ON order_details.product_id = products.id
     INNER JOIN categories ON products.category_id = categories.id
     INNER JOIN suppliers ON products.supplier_id = suppliers.id
-WHERE employees.employee_id > 3 AND employees.employee_id < 10
+WHERE employees.employee_id > 3 AND employees.employee_id <= 10
 GROUP BY categories.name
 HAVING avg_quantity > 21
 ORDER BY rows_in_group DESC
